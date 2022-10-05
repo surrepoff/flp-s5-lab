@@ -63,7 +63,9 @@
     (cond
         ((null L1) nil)
         ((null L2) nil)
+        ; пустые ли списки?
         (t (cons (funcall f (car L1) (car L2)) (funcional f (cdr L1) (cdr L2))))
+        ; вызываем функцию и вставляем результат в список + входим в рекурсию
     )
 )
 
