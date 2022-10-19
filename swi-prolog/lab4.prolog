@@ -1,6 +1,6 @@
-parent(john, bob).
 parent(mary, bob).
 parent(mary, ann).
+parent(john, bob).
 parent(bob, liz).
 parent(bob, paul).
 parent(bob, sam).
@@ -27,26 +27,38 @@ continuer_of_the_family(X) :- father(X, Y), man(Y), !.
 
 /** <examples>
 
+а) Кто отец Сэма?
 ?- father(X, sam).
 
+б) Есть ли мать у Боба? (ответ должен быть true)
 ?- mother(_, bob).
 
+в) Кто сестра Сэма?
 ?- sister(X, sam).
 
+г) Есть ли сестра у Лиз?
 ?- sister(_, liz).
 
+д) Кто брат Боба?
 ?- brother(X, bob).
 
+е) Кто внуки Мэри?
 ?- grandson(X, mary).
 
+ж) Чей внук Паул?
 ?- grandson(paul, X).
 
+з) Кто тетя Сэма?
 ?- aunt(X, sam).
 
-?- (brother(_X, ann); sister(_X, ann)), parent(_X, _), !
+и) Есть ли племянники у Энн?
+?- (brother(_X, ann); sister(_X, ann)), parent(_X, _), !.
 
+к) У кого ровно двое детей? (Пролог-система должна находить только Мэри, и,
+причем, только один раз).
 ?- have_2_children(X).
 
+л) Боб - продолжатель рода?
 ?- continuer_of_the_family(bob).
 
 */
