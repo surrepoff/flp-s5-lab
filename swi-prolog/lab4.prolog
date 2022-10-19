@@ -56,7 +56,7 @@ continuer_of_the_family(X) :- father(X, Y), man(Y), !.
 
 к) У кого ровно двое детей? (Пролог-система должна находить только Мэри, и,
 причем, только один раз).
-?- have_2_children(X).
+?- have_2_children(X), !.
 
 л) Боб - продолжатель рода?
 ?- continuer_of_the_family(bob).
